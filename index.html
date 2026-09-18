@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualitas Jr. | Consultoria e Estratégia</title>
+
+    <meta name="description" content="Conectamos estratégia, marketing e gestão para o seu negócio.">
+    <meta name="keywords"
+        content="criação de sites, desenvolvimento web, Empresa junior, Qualitas jr, Campinas, Facamp ">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@300;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="img/imgicon.png">
+
+    <style>
+        /* --- MELHORIAS DE ANIMAÇÕES E HERO --- */
+
+        /* Animações de Entrada */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Hero Section Enhanced */
+        .hero {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%) !important;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Círculos decorativos no fundo do Hero */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 33, 71, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem !important;
+            color: var(--azul-principal);
+            margin-bottom: 25px !important;
+            letter-spacing: -1px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem !important;
+            color: #555;
+            max-width: 600px;
+            animation: fadeInUp 0.8s ease-out forwards;
+            animation-delay: 0.2s;
+            opacity: 0;
+        }
+
+        .btn-cta {
+            animation: fadeInUp 0.8s ease-out forwards;
+            animation-delay: 0.4s;
+            opacity: 0;
+            box-shadow: 0 10px 20px rgba(0, 33, 71, 0.2);
+            transition: all 0.3s ease !important;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 25px rgba(0, 33, 71, 0.3);
+        }
+
+        /* Stats Cards Animation */
+        .hero-stats {
+            animation: fadeInRight 0.8s ease-out forwards;
+            animation-delay: 0.6s;
+            opacity: 0;
+        }
+
+        .stat-card {
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            background-color: var(--azul-hover);
+            box-shadow: 0 20px 40px rgba(0, 33, 71, 0.2);
+        }
+
+        /* Scroll Reveal Effect */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 968px) {
+            .hero-content h1 {
+                font-size: 2.5rem !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.6rem !important;
+            }
+
+            .hero-content p {
+                font-size: 0.95rem !important;
+            }
+
+            .stat-card:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="#" class="logo">
+            <img src="img/logo.png" alt="Qualitas Jr. Logo">
+        </a>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <nav id="nav-menu">
+            <a href="#" onclick="closeMenu()">Início</a>
+            <a href="#sobre" onclick="closeMenu()">Sobre Nós</a>
+            <a href="#areas" onclick="closeMenu()">Nossas Áreas</a>
+            <a href="#servicos" onclick="closeMenu()">Serviços</a>
+            <a href="#patrocinadores" onclick="closeMenu()">Patrocinadores</a>
+            <a href="#contato" class="btn-diagnostico" onclick="closeMenu()">Solicite um Diagnóstico</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Conectamos estratégia, marketing e gestão para o seu negócio.</h1>
+                <p>Excelência e qualidade em cada entrega. Há mais de 20 anos transformando empresas. Isso é Qualitas
+                    Jr.</p>
+                <a href="#contato" class="btn-cta">Solicite um Diagnóstico Gratuito</a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <h3>20+</h3>
+                    <p>Anos de História</p>
+                </div>
+                <div class="stat-card">
+                    <h3>150+</h3>
+                    <p>Empresas Atendidas</p>
+                </div>
+                <div class="stat-card">
+                    <h3>97%</h3>
+                    <p>Taxa de Satisfação</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="about reveal">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="img/foto-equipe.webp" alt="Equipe Qualitas Jr" class="team-photo">
+
+            </div>
+            <div class="about-text">
+                <h2>Quem somos?</h2>
+                <p>Com mais de <strong>20 anos de trajetória</strong>, a Qualitas Jr. nasceu do desejo de conectar o
+                    conhecimento acadêmico de ponta às necessidades reais do mercado brasileiro.</p>
+                <p>Sediada em Campinas, no polo tecnológico de Barão Geraldo, somos formados por jovens talentos que
+                    buscam constantemente a inovação.</p>
+                <p>O que nos move é a busca incessante pela excelência, garantindo que cada projeto entregue carregue o
+                    selo de qualidade que define nosso nome.</p>
+            </div>
+        </div>
+
+        <div class="mission-vision-values">
+            <div class="mvv-card reveal">
+                <div class="mvv-icon"><i class="fa-solid fa-bullseye" style="color: rgb(255, 255, 255);"></i></div>
+                <h3>Missão</h3>
+                <p>Conectar estratégia, marketing e gestão para transformar negócios através de soluções inovadoras e de
+                    excelência, potencializando o crescimento das empresas.</p>
+            </div>
+            <div class="mvv-card reveal">
+                <div class="mvv-icon"><i class="fa-duotone fa-regular fa-eye"
+                        style="--fa-primary-color: rgb(255, 255, 255); --fa-secondary-color: rgb(255, 255, 255);"></i>
+                </div>
+                <h3>Visão</h3>
+                <p>Ser a consultoria júnior de referência no mercado brasileiro, reconhecida pela qualidade, inovação e
+                    impacto positivo na transformação digital de empresas.</p>
+            </div>
+            <div class="mvv-card reveal">
+                <div class="mvv-icon"><i class="fa-solid fa-check" style="color: rgb(255, 255, 255);"></i></div>
+                <h3>Valores</h3>
+                <p>Excelência, integridade, inovação, comprometimento e qualidade. Acreditamos que cada detalhe importa
+                    e que o sucesso de nossos clientes é nosso sucesso.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="areas" class="nossas areas reveal">
+        <div class="teams-section">
+            <h2 class="teams-title">Nossas Áreas</h2>
+            <div class="teams-grid">
+                <div class="team-card">
+                    <div class="team-photo-placeholder">
+                        <img src="img/presidencia.webp" alt="Equipe de Presidência">
+                    </div>
+                    <h3>Presidência</h3>
+                    <p>Liderança estratégica e visão corporativa. Responsável por alinhar todas as áreas em torno dos
+                        objetivos da empresa, garantindo a excelência em cada projeto entregue.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo-placeholder">
+                        <img src="img/time-pd.webp" alt="Equipe de Projetos e Desenvolvimento">
+                    </div>
+                    <h3>Projetos e Desenvolvimento</h3>
+                    <p>Execução e inovação de soluções. Transforma ideias em resultados concretos, desenvolvendo
+                        projetos personalizados com metodologias ágeis e foco na qualidade.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo-placeholder">
+                        <img src="img/time-comercial.webp" alt="Equipe Comercial">
+                    </div>
+                    <h3>Comercial</h3>
+                    <p>Relacionamento e crescimento de negócios. Constrói pontes entre a Qualitas e o mercado, captando
+                        oportunidades e cultivando parcerias duradouras com nossos clientes.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo-placeholder">
+                        <img src="img/time-financeiro.webp" alt="Equipe Financeira">
+                    </div>
+                    <h3>Financeiro</h3>
+                    <p>Gestão e sustentabilidade financeira. Controla e otimiza os recursos financeiros, garantindo a
+                        saúde econômica e o crescimento sustentável da empresa.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo-placeholder">
+                        <img src="img/time-marketing.webp" alt="Equipe de Marketing">
+                    </div>
+                    <h3>Marketing</h3>
+                    <p>Comunicação e presença de marca. Cria estratégias de posicionamento e conteúdo que fortalecem a
+                        identidade da Qualitas nos meios digitais e tradicionais.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-photo-placeholder">
+                        <img src="img/time-rh.webp" alt="Equipe de Recursos Humanos">
+                    </div>
+                    <h3>Recursos Humanos</h3>
+                    <p>Desenvolvimento e engajamento de pessoas. Cuida do desenvolvimento profissional dos membros,
+                        promovendo capacitações, integração e um ambiente de alta performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="services reveal">
+        <h2 class="services-title">Nossas Soluções</h2>
+        <p class="services-subtitle">Clique em qualquer serviço para conhecer mais detalhes sobre como podemos
+            transformar o seu negócio.</p>
+        <div class="services-grid">
+            <div class="service-card" onclick="toggleService(this)">
+                <div class="service-card-header">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Gestão de Mídia</h3>
+                </div>
+                <div class="service-card-toggle"><i class="fas fa-chevron-down"></i></div>
+                <div class="service-card-description">
+                    <p>Gerenciamos suas redes sociais com estratégia e criatividade, criando conteúdo que engaja seu
+                        público e fortalece a presença digital da sua marca.</p>
+                </div>
+            </div>
+            <div class="service-card" onclick="toggleService(this)">
+                <div class="service-card-header">
+                    <i class="fas fa-palette"></i>
+                    <h3>Identidade Visual</h3>
+                </div>
+                <div class="service-card-toggle"><i class="fas fa-chevron-down"></i></div>
+                <div class="service-card-description">
+                    <p>Desenvolvemos logos, paletas de cores e materiais gráficos que traduzem a essência da sua empresa
+                        e criam uma identidade memorável no mercado.</p>
+                </div>
+            </div>
+            <div class="service-card" onclick="toggleService(this)">
+                <div class="service-card-header">
+                    <i class="fas fa-code"></i>
+                    <h3>Criação de Site</h3>
+                </div>
+                <div class="service-card-toggle"><i class="fas fa-chevron-down"></i></div>
+                <div class="service-card-description">
+                    <p>Criamos sites modernos, responsivos e otimizados para SEO, garantindo que sua empresa tenha uma
+                        vitrine digital profissional e de alto impacto.</p>
+                </div>
+            </div>
+            <div class="service-card" onclick="toggleService(this)">
+                <div class="service-card-header">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Plano de Marketing</h3>
+                </div>
+                <div class="service-card-toggle"><i class="fas fa-chevron-down"></i></div>
+                <div class="service-card-description">
+                    <p>Elaboramos estratégias de marketing completas, desde a análise do mercado até a definição de
+                        canais e ações para alcançar seus objetivos de negócio.</p>
+                </div>
+            </div>
+            <div class="service-card" onclick="toggleService(this)">
+                <div class="service-card-header">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Plano de Negócios</h3>
+                </div>
+                <div class="service-card-toggle"><i class="fas fa-chevron-down"></i></div>
+                <div class="service-card-description">
+                    <p>Estruturamos planos de negócios sólidos com análise financeira, estudo de viabilidade e
+                        planejamento estratégico para tirar sua ideia do papel.</p>
+                </div>
+            </div>
+            <div class="service-card" onclick="toggleService(this)">
+                <div class="service-card-header">
+                    <i class="fas fa-search"></i>
+                    <h3>Pesquisa de Mercado</h3>
+                </div>
+                <div class="service-card-toggle"><i class="fas fa-chevron-down"></i></div>
+                <div class="service-card-description">
+                    <p>Realizamos pesquisas qualitativas e quantitativas para mapear seu público-alvo, entender a
+                        concorrência e identificar oportunidades de crescimento.</p>
+                </div>
+            </div>
+            <div class="service-card" onclick="toggleService(this)">
+                <div class="service-card-header">
+                    <i class="fas fa-ad"></i>
+                    <h3>Tráfego Pago</h3>
+                </div>
+                <div class="service-card-toggle"><i class="fas fa-chevron-down"></i></div>
+                <div class="service-card-description">
+                    <p>Criamos e gerenciamos campanhas de anúncios no Google e redes sociais, otimizando investimentos
+                        para maximizar o retorno e gerar resultados mensuráveis.</p>
+                </div>
+            </div>
+            <div class="service-card" onclick="toggleService(this)">
+                <div class="service-card-header">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Cursos de Gestão</h3>
+                </div>
+                <div class="service-card-toggle"><i class="fas fa-chevron-down"></i></div>
+                <div class="service-card-description">
+                    <p>Oferecemos capacitações práticas em gestão, marketing e estratégia para equipes e empreendedores
+                        que desejam se atualizar e crescer profissionalmente.</p>
+                </div>
+            </div>
+            <div class="service-card" onclick="toggleService(this)">
+                <div class="service-card-header">
+                    <i class="fas fa-chess"></i>
+                    <h3>Planejamento Estratégico</h3>
+                </div>
+                <div class="service-card-toggle"><i class="fas fa-chevron-down"></i></div>
+                <div class="service-card-description">
+                    <p>Definimos metas, indicadores e planos de ação personalizados para posicionar sua empresa de forma
+                        competitiva e garantir um crescimento sustentável.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="patrocinadores" class="sponsors reveal">
+        <h2 class="sponsors-title">Nossos Patrocinadores</h2>
+        <p class="sponsors-subtitle">Empresas e pessoas que acreditam no nosso propósito e impulsionam nossa missão de
+            transformar negócios com excelência.</p>
+        <div class="sponsors-container">
+            <div class="sponsor-card-large">
+                <div class="sponsor-logo-large">
+                    <img src="img/patrocinadores.webp" alt="Patrocinadores">
+                </div>
+            </div>
+        </div>
+        <div class="sponsors-cta-area">
+            <p class="sponsors-cta-text">Sua marca ao lado de quem transforma o mercado. Seja um patrocinador da
+                Qualitas Jr. e faça parte dessa história de excelência e inovação.</p>
+            <div class="sponsor-button-container">
+                <a href="#contato" class="btn-sponsor">Quero Patrocinar</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="clientes" class="trusted-clients reveal">
+        <h2 class="trusted-clients-title">Empresas que Já Confiaram na Qualitas</h2>
+        <p class="trusted-clients-subtitle">Mais de 150 empresas já transformaram seus negócios com nossas soluções. A
+            próxima pode ser a sua.</p>
+        <div class="clients-carousel-wrapper">
+            <div class="clients-carousel-track" id="clients-track">
+                <div class="client-logo-card">
+                    <img src="img/facampsemfundo.png" alt="FACAMP">
+                </div>
+                <div class="client-logo-card">
+                    <img src="img/kairos.png" alt="Kairós">
+                </div>
+                <div class="client-logo-card">
+                    <img src="img/logothecoffemandic.png" alt="The Coffee Mandic">
+                </div>
+                <div class="client-logo-card">
+                    <img src="img/ulivingsemfundo.png" alt="Uliving">
+                </div>
+                <div class="client-logo-card">
+                    <img src="img/vetro.png" alt="Vetro">
+                </div>
+                <div class="client-logo-card">
+                    <img src="img/planetamoto.png" alt="Planeta Moto">
+                </div>
+                <!-- Duplicados para carrossel infinito -->
+                <div class="client-logo-card">
+                    <img src="img/facampsemfundo.png" alt="FACAMP">
+                </div>
+                <div class="client-logo-card">
+                    <img src="img/kairos.png" alt="Kairós">
+                </div>
+                <div class="client-logo-card">
+                    <img src="img/logothecoffemandic.png" alt="The Coffee Mandic">
+                </div>
+                <div class="client-logo-card">
+                    <img src="img/ulivingsemfundo.png" alt="Uliving">
+                </div>
+                <div class="client-logo-card">
+                    <img src="img/vetro.png" alt="Vetro">
+                </div>
+                <div class="client-logo-card">
+                    <img src="img/planetamoto.png" alt="Planeta Moto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="testimonials reveal">
+        <h2 style="text-align:center; margin-bottom: 50px;">O que dizem nossos clientes</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"A atenção aos detalhes e a qualidade da entrega da Qualitas Jr. superaram todas as expectativas. Uma
+                    consultoria de elite!"</p>
+                <strong>- Cliente Satisfeito</strong>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Inovadores e comprometidos. A nova identidade visual que criaram para nós nos trouxe muitos
+                    resultados."</p>
+                <strong>- Startup de Inovação</strong>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Mais de 20 anos de experiência que se notam na organização dos processos e na estratégia de
+                    marketing."</p>
+                <strong>- Empresa Campinas</strong>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="footer-grid">
+            <div class="contact-form">
+                <h3>Solicite um Diagnóstico Gratuito</h3>
+                <form action="https://formsubmit.co/presidencia.qualitas@gmail.com" method="POST">
+                    <input type="hidden" name="_next" value="https://SEUDOMINIO.com/obrigado.html">
+
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <input type="text" name="empresa" placeholder="Nome da Empresa" required>
+                    <input type="email" name="email" placeholder="Seu E-mail" required>
+                    <textarea name="mensagem" rows="4" placeholder="Como podemos ajudar seu negócio?"></textarea>
+
+                    <button type="submit">SOLICITAR AGORA</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <h3>Fale Conosco</h3>
+                <p><i class="fas fa-user"></i> Presidente: Vitória Risso Rinco</p>
+                <p><i class="fas fa-phone"></i> (35) 99122-4806</p>
+                <p><i class="fas fa-envelope"></i> presidencia.qualitas@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Alan Turing, 805 - Barão Geraldo, Campinas/SP</p>
+
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/qualitasjr?igsh=eXc1OTRqb3RvMmMx&utm_source=qr"
+                        target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/qualitasjr" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+                <a href="https://www.instagram.com/qualitasjr" class="social-link-text">Fale conosco pelo Instagram</a>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 Qualitas Jr. - Excelência e Qualidade em Gestão.</p>
+    </footer>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+
+        // Abre e fecha o menu ao clicar no ícone
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Fecha o menu automaticamente ao clicar em um link
+        function closeMenu() {
+            navMenu.classList.remove('active');
+        }
+
+        // --- SCRIPT PARA REVEAL ON SCROLL ---
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+
+        // Trigger initial reveal
+        reveal();
+
+        // --- SCRIPT PARA ACCORDION DOS SERVIÇOS ---
+        function toggleService(card) {
+            // Se o card clicado já está ativo, fecha ele
+            if (card.classList.contains('active')) {
+                card.classList.remove('active');
+                return;
+            }
+
+            // Fecha todos os outros cards abertos
+            document.querySelectorAll('.service-card.active').forEach(function (openCard) {
+                openCard.classList.remove('active');
+            });
+
+            // Abre o card clicado
+            card.classList.add('active');
+        }
+    </script>
+
+</body>
+
+</html>
